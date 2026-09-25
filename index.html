@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob: https://server.arcgisonline.com; font-src 'self'; connect-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>CSU-TAPS Data 2023-2026</title>
+<link rel="stylesheet" href="css/app.css">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="mark">TAPS</div>
+    <div>
+      <div class="brand-title">CSU-TAPS Sprinkler Corn Data, 2023 to 2026</div>
+      <div class="brand-sub">Colorado State University, Testing Ag Performance Solutions. Data organized by Wub Yilma</div>
+    </div>
+  </div>
+  <div class="who" id="who" hidden><span id="whoEmail"></span><button id="logoutBtn" class="btn ghost">Sign out</button></div>
+</header>
+
+<section id="login" class="login">
+  <form id="loginForm" class="card login-card" autocomplete="on">
+    <h1>Sign in</h1>
+    <p class="muted">Access is limited to the CSU-TAPS team. Data is decrypted in your browser after you sign in.</p>
+    <label>Email<input id="email" type="email" autocomplete="username" required></label>
+    <label>Password<input id="password" type="password" autocomplete="current-password" required></label>
+    <button class="btn primary" type="submit" id="loginBtn">Sign in</button>
+    <p id="loginMsg" class="msg" role="alert"></p>
+  </form>
+</section>
+
+<div id="app" class="app" hidden>
+  <div class="modebar">
+    <div class="modes" role="tablist">
+      <button class="mode" data-mode="map" role="tab">Map</button>
+      <button class="mode" data-mode="charts" role="tab">Charts</button>
+      <button class="mode" data-mode="tables" role="tab">Tables</button>
+    </div>
+    <div class="head-actions">
+      <button class="btn" id="pngBtn" title="Save the map or chart as an image">Save image</button>
+      <button class="btn primary" id="xlsxBtn" title="Download what is on screen as an Excel file">Download Excel</button>
+    </div>
+  </div>
+  <div class="body">
+    <aside class="left" id="left"></aside>
+    <div class="gutter" id="gutL" title="Drag to change the width of the left side (double-click to reset)"></div>
+    <main class="main">
+      <div class="page-head"><h2 id="pageTitle"></h2><p id="pageNote" class="muted"></p></div>
+      <div class="chart-wrap card" id="chartCard"><div id="chart" class="chart"></div><div id="chartMsg" class="chart-msg"></div><div class="chart-grip" id="chartGrip" title="Drag to make the figure taller or shorter (double-click to reset)"></div></div>
+      <div class="card table-card" id="tableCard">
+        <div class="table-head"><strong id="tableTitle">Data</strong><span id="tableInfo" class="muted"></span><span class="pager" id="pager"></span></div>
+        <div class="table-scroll" id="tableScroll"><table id="table" class="grid"></table></div>
+      </div>
+    </main>
+    <div class="gutter" id="gutR" title="Drag to change the width of the right side (double-click to reset)"></div>
+    <aside class="panel" id="panel"></aside>
+  </div>
+</div>
+
+<div id="busy" class="busy" hidden><div class="spinner"></div><div id="busyMsg">Loading</div></div>
+
+<script src="vendor/echarts.min.js"></script>
+<script src="js/crypto.js"></script>
+<script src="js/data.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/views.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

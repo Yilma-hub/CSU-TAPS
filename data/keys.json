@@ -1,0 +1,16 @@
+{
+"version": "20260924235706",
+"kdf": {
+"name": "PBKDF2",
+"hash": "SHA-256",
+"iterations": 600000
+},
+"pepper": "yjLrVesIK+cvNT5JIHYH9Q==",
+"users": {
+"521f4ee31a5d1b3d0042523a08c5d042bcf245c0818eee74c64038cc3518b369": {
+"salt": "Az0GyvTkldpEF2Jrhamzqw==",
+"iv": "Lo6lt4rVv5OmnRTc",
+"key": "0lvpN3wVH1sAB792yX0t8JHfF+cvbuh3oNEqCKSZ1LziX4mQK/FfnFzhw3Ggz7l1"
+}
+}
+}
