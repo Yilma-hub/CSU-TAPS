@@ -1,0 +1,4 @@
+# Farm-level input data and generated outputs stay local (data is not published unencrypted)
+*.xlsx
+*.zip
+STEP_out_*/
